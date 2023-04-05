@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{C592DD18-9FC1-4653-9F82-4A0375A1D4DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{C592DD18-9FC1-4653-9F82-4A0375A1D4DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 DAL", "04 DAL", "{34DCCC10-4EEE-44B0-9661-3979B8E7EDEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{E80EF83C-0F01-4B12-BB9A-9E9981D804D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E80EF83C-0F01-4B12-BB9A-9E9981D804D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Domain", "01 Domain", "{0031C581-98AF-4C27-92EE-14D337B4EA7B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 API", "03 API", "{2EC59BDB-3397-455F-8D21-4C69F10E1C6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{B903C60B-5486-44E1-8C5F-50F6F611757A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{B903C60B-5486-44E1-8C5F-50F6F611757A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Business", "02 Business", "{0E8ED821-1D27-41AD-B8AF-182A784C5B74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
