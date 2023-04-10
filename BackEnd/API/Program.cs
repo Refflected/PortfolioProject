@@ -1,4 +1,6 @@
 using API.Bootstrap;
+using Business;
+using Business.Queries;
 using DataAccessLayer.Seeding;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.JsonWebTokens;
@@ -6,6 +8,12 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//MediatR
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(UserReadQuery).Assembly));
+
+//AutoMapper
+builder.Services.AddAutoMapper(typeof(BusinessAutoMapperProfile).Assembly, typeof(Program).Assembly);
 
 // DbContext
 builder.Services.ConfigurePortfolioContext(builder.Configuration);

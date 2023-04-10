@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using API.DTOs;
+using AutoMapper;
+using Business.Queries;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -7,10 +11,22 @@ namespace API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        //[HttpGet]
-        //public IActionResult GetAll()
-        //{
+        private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
 
-        //}
+        public UserController(IMediator mediator, IMapper mapper)
+        {
+            _mediator = mediator;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var query = new UserReadQuery();
+            var userBusinessDtos = await _mediator.Send(query);
+            var userApiDtos = _mapper.Map<IEnumerable<UserApiDto>>(userBusinessDtos);
+            return Ok(userApiDtos);
+        }
     }
 }
