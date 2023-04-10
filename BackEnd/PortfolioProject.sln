@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Business", "02 Business", "{0E8ED821-1D27-41AD-B8AF-182A784C5B74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{E0B5593A-D0A5-460B-9DB0-B340E8CFB525}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{B903C60B-5486-44E1-8C5F-50F6F611757A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B903C60B-5486-44E1-8C5F-50F6F611757A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B903C60B-5486-44E1-8C5F-50F6F611757A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B5593A-D0A5-460B-9DB0-B340E8CFB525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B5593A-D0A5-460B-9DB0-B340E8CFB525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B5593A-D0A5-460B-9DB0-B340E8CFB525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B5593A-D0A5-460B-9DB0-B340E8CFB525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{C592DD18-9FC1-4653-9F82-4A0375A1D4DA} = {34DCCC10-4EEE-44B0-9661-3979B8E7EDEA}
 		{E80EF83C-0F01-4B12-BB9A-9E9981D804D0} = {0031C581-98AF-4C27-92EE-14D337B4EA7B}
 		{B903C60B-5486-44E1-8C5F-50F6F611757A} = {2EC59BDB-3397-455F-8D21-4C69F10E1C6A}
+		{E0B5593A-D0A5-460B-9DB0-B340E8CFB525} = {2EC59BDB-3397-455F-8D21-4C69F10E1C6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8CC2C0D-7D6E-48AF-BDA6-90B03EAC2699}

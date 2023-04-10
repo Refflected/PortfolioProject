@@ -1,19 +1,23 @@
-﻿using Domain.Entities;
+﻿using DataAccessLayer.Configurations.Base;
+using Domain.Entities;
+using Domain.Entities.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer.Configurations
 {
-    public class UserConfiguration : IEntityTypeConfiguration<User>
+    public class UserConfiguration : BaseEntityConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public new void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(x => x.Id);
+            base.Configure(builder);
+
+            builder.HasIndex(x => x.Email)
+                .IsUnique();
+
+            builder.Property(x => x.Email)
+                .HasMaxLength(255)
+                .IsRequired();
 
             builder.Property(x => x.UserName)
                 .HasMaxLength(255)
@@ -24,10 +28,6 @@ namespace DataAccessLayer.Configurations
 
             builder.Property(x => x.LastName)
                 .HasMaxLength(255);
-
-            builder.Property(x => x.Email)
-                .HasMaxLength(255)
-                .IsRequired();
 
             builder.Property(x => x.Password)
                 .HasMaxLength(255)

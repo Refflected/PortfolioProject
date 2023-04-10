@@ -12,50 +12,50 @@ namespace DataAccessLayer.Repositories.Generic
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly PortfolioContext _context;
-        private readonly DbSet<TEntity> table;
+        private readonly DbSet<TEntity> _table;
 
         public BaseRepository(PortfolioContext context)
         {
-            this._context = context;
-            table = _context.Set<TEntity>();
+            _context = context;
+            _table = _context.Set<TEntity>();
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<IEnumerable<TEntity>> ReadAllAsync()
         {
-            TEntity? existing = table.Find(id);
-            if (existing != null)
-            {
-                table.Remove(existing);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            else
-                return false;
+            return await _table.ToListAsync();
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public async Task<TEntity?> ReadByIdAsync(int id)
         {
-            return await table.ToListAsync();
-        }
-
-        public async Task<TEntity?> GetByIdAsync(int id)
-        {
-            return await table.FindAsync(id);
+            return await _table.FindAsync(id);
         }
 
         public async Task<bool> InsertAsync(TEntity entity)
         {
-            table.Add(entity);
+            _table.Add(entity);
             await _context.SaveChangesAsync();
             return true;
         }
 
         public async Task<bool> UpdateAsync(TEntity entity)
         {
-            table.Attach(entity);
+            _table.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            TEntity? existing = _table.Find(id);
+            if (existing != null)
+            {
+                _table.Remove(existing);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

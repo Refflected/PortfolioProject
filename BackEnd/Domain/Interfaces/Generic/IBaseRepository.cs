@@ -9,8 +9,8 @@ namespace Domain.Interfaces.Generic
 {
     public interface IBaseRepository<TEntity> where TEntity : BaseEntity
     {
-        Task<IEnumerable<TEntity>> GetAllAsync();
-        Task<TEntity?> GetByIdAsync(int id);
+        Task<IEnumerable<TEntity>> ReadAllAsync();
+        Task<TEntity?> ReadByIdAsync(int id);
         Task<bool> InsertAsync(TEntity obj);
         Task<bool> UpdateAsync(TEntity obj);
         Task<bool> DeleteAsync(int id);
